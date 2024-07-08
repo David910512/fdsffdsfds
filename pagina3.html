@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChanchiTecOficial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+        body {
+            padding-bottom: 60px;
+        }
+
+        .search-input {
+            width: 400px;
+        }
+
+        .img-btn {
+            cursor: pointer;
+        }
+
+        .offcanvas-body .nav-link {
+            color: #343a40;
+        }
+
+        .offcanvas-body .nav-link:hover {
+            color: #000000;
+            background-color: #c0c3c7;
+        }
+
+        .offcanvas.offcanvas-start {
+            width: 300px;
+        }
+
+        .main-container {
+            background-color: #343a40;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px;
+            background-color: #343a40;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .computadora {
+            width: calc(25% - 20px);
+            max-width: 247px;
+            height: auto;
+            border: 1px solid #959393;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            background-color: #eae9e9;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .computadora:hover {
+            background-color: #d8dafb;
+            transform: scale(1.1);
+        }
+
+        .computadora img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .computadora-content {
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .precio {
+            color: rgb(58, 58, 58);
+            font-weight: bold;
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #cf2e2e;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-comprar:hover {
+            background-color: #cf2e2e;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #212529 !important;
+            color: white;
+        }
+
+        .footer-links .nav-link {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+
+        .footer-links .nav-link:hover {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand img-btn" href="#">
+                <img src="https://marketplace.canva.com/EAFxAvCKYKw/2/0/1600w/canva-logotipo-tecnolog%C3%ADa-azul-xv-S75uS0KI.jpg"
+                    alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+                            aria-controls="offcanvasCart">
+                            <span class="material-symbols-outlined">menu</span> Categoría
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex mx-auto">
+                    <input class="form-control me-2 search-input" type="search" placeholder="Buscar..."
+                        aria-label="Buscar">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mi perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ayuda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand img-btn" href="#">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5564/5564929.png" alt="Logo" width="50"
+                                height="40" class="d-inline-block align-text-top">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasCartLabel">Categorías</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="promociones-link">Promociones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="celulares-link">Celulares</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="laptops-link">Laptops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="computadoras-link">Computadoras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="accesorios-link">Accesorios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="escritorios-link">Escritorios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="mis-compras-link">Mis compras</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <div class="main-container">
+            <div class="container">
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_118576138_2152803_1?wid=1500&hei=1500&qlt=70"
+                            alt="computadora 1">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>HELION</h2>
+                        <p class="descripcion">Computadora PC Intel Core i7 RAM 16GB Disco Duro
+                            1TB+SSD 480GB Monitor 27 FHD
+                        </p>
+                        <p class="precio">S/ 7,729.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="Computadora-image">
+                        <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_116459748_1499797_1?wid=1500&hei=1500&qlt=70"
+                            alt="Computadora 2">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>HP</h2>
+                        <p class="descripcion">Computadora PC i7 3.4 ghz + Monitor 19" HD 16GB RAM
+                            Disco 1TB HDD 240GB SSD
+                            case RGB</p>
+                        <p class="precio">S/ 3,549.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_113684366_713429_1?wid=1500&hei=1500&qlt=70"
+                            alt="Computadora 3">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>SAMSUNG</h2>
+                        <p class="descripcion">Computadora Gamer Core I7 3.2 ghz Ram 16GB HDD
+                            1TB+SSD 480GB+Monitor 24" HD
+                        </p>
+                        <p class="precio">S/ 2,789.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://mipclista.com/5273-large_default/pc-gamer-haku-ryzen-5-4600g.jpg"
+                            alt="Computadora 4">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>HP</h2>
+                        <p class="descripcion">Computadora PC Intel Core i5 12°Gen 2.4 ghz 8GB RAM
+                            256GB SSD +Monitor 23.8"
+                            Full HD</p>
+                        <p class="precio">s/ 2,299.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_114474223_1020107_1?wid=1500&hei=1500&qlt=70"
+                            alt="Computadora 5">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>LG</h2>
+                        <p class="descripcion">Computadora PC GAMER RYZEN 5 5600GT RAM 16GB SSD
+                            480GB Monitor 22" FULL HD
+                        </p>
+                        <p class="precio">S/ 2,099.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_123330167_3648965_1?wid=1500&hei=1500&qlt=70"
+                            alt="Computadora 6">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>LENOVO</h2>
+                        <p class="descripcion">Computadora Pc Intel Core i7 3.2 ghz Ram 16GB Disco
+                            Solido SSD 1TB + Monitor
+                            24" HD
+                        </p>
+                        <p class="precio">S/ 5,439.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://falabella.scene7.com/is/image/FalabellaPE/gsc_116431182_1490695_1?wid=1500&hei=1500&qlt=70"
+                            alt="computadora 7">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>AMD</h2>
+                        <p class="descripcion">Computadora PC Intel Core i7 3.4 Ghz RAM 16GB DISCO
+                            1TB+SSD 480GB Monitor 24
+                            LG
+                        </p>
+                        <p class="precio">S/ 4,649.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="computadora">
+                    <div class="computadora-image">
+                        <img src="https://mipclista.com/6115-large_default/pc-gamer-draco-black-blue-core-i7-12700f-12th.jpg"
+                            alt="computadora 8">
+                    </div>
+                    <div class="computadora-content">
+                        <h2>ASUS</h2>
+                        <p class="descripcion">Computadora PC intel Core i9 4.0 ghz Ram 32GB Disco
+                            Solido SDD 2TB Monitor 27
+                            LG</p>
+                        <p class="precio">S/ 9,349.00</p>
+                        <a class="btn-comprar">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-5">
+        <div class="container-fluid">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top footer-links">
+                <div class="col mb-3">
+                    <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                    </a>
+                    <p class="text-body-secondary">© 2024</p>
+                </div>
+
+                <div class="col mb-3">
+
+                </div>
+
+                <div class="col mb-3">
+                    <h5>COMUNICATE CON NOSOTROS</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Central
+                                telefonica:</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">902149574</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Correo
+                                electronico</a></li>
+                        <li class="nav-item mb-2"><a href="#"
+                                class="nav-link p-0 text-body-secondary">canchitecshop@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col mb-3">
+                    <h5>NOSOTROS</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Nuestras
+                                Tiendas</a></li>
+                    </ul>
+                </div>
+
+                <div class="col mb-3">
+                    <h5>Servicio al Cliente</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Garantia</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terminos y
+                                Condiciones</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacidad</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Politica de
+                                cambio y Devolución</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Libro de
+                                reclamaciones</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

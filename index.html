@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChanchiTecOficial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-bottom: 60px;
+        }
+
+        .search-input {
+            width: 400px;
+        }
+
+        .img-btn {
+            cursor: pointer;
+        }
+
+        .offcanvas-body .nav-link {
+            color: #343a40;
+        }
+
+        .offcanvas-body .nav-link:hover {
+            color: #000000;
+            background-color: #f8f9fa;
+        }
+
+        .offcanvas.offcanvas-start {
+            width: 300px;
+        }
+
+        .btn-cart {
+            position: relative;
+            padding-left: 3rem;
+            text-align: left;
+        }
+
+        .btn-cart::before {
+            content: "\f07a";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .carousel-container {
+            margin-top: 20px;
+            /* Ajusta el espacio entre el carrusel y el texto */
+        }
+
+        .texto-con-fondo {
+            background-color: hsl(0, 64%, 60%);
+            /* Color de fondo rojo */
+            color: #f8f9fa;
+            padding: 0dvb;
+            /* Espacio interno */
+            margin: 20px 0;
+            /* Margen externo para separación */
+        }
+
+        footer {
+            background-color: #212529 !important;
+            color: white;
+        }
+
+        .footer-links .nav-link {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+
+        .footer-links .nav-link:hover {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand img-btn" href="#">
+                    <img src="https://marketplace.canva.com/EAFxAvCKYKw/2/0/1600w/canva-logotipo-tecnolog%C3%ADa-azul-xv-S75uS0KI.jpg"
+                        alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+                                aria-controls="offcanvasCart">
+                                <span class="material-symbols-outlined">menu</span> Categoría
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex mx-auto">
+                        <input class="form-control me-2 search-input" type="search" placeholder="Buscar..."
+                            aria-label="Buscar">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    </form>
+                    <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        Iniciar sesión
+                    </button>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mi perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ayuda</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#cartModal">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5564/5564929.png" alt="Logo" width="50"
+                                    height="40" class="d-inline-block align-text-top">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasCartLabel">Categorías</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="promociones-link">Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pagina4.html" id="celulares-link">Celulares</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pagina5.html" id="laptops-link">Laptops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pagina3.html" id="computadoras-link">Computadoras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pagina6.html" id="accesorios-link">Periféricos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="escritorios-link">Escritorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="mis-compras-link">Mis compras</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Modal de Iniciar sesión -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="username"
+                                    placeholder="Ingrese su nombre de usuario">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Ingrese su contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Carrito de compras -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio unitario (S/)</th>
+                                    <th>Cantidad</th>
+                                    <th>Total (S/)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Producto 1</td>
+                                    <td>S/ 100.00</td>
+                                    <td>2</td>
+                                    <td>S/ 200.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Producto 2</td>
+                                    <td>S/ 50.00</td>
+                                    <td>1</td>
+                                    <td>S/ 50.00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">Total:</td>
+                                    <td>S/ 250.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <!-- Formulario de pago -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Detalles de pago</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="nombreCompleto" class="form-label">Nombre
+                                            completo</label>
+                                        <input type="text" class="form-control" id="nombreCompleto" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="numeroTarjeta" class="form-label">Número de tarjeta</label>
+                                        <input type="text" class="form-control" id="numeroTarjeta" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="fechaExpiracion" class="form-label">Fecha de expiración</label>
+                                        <input type="text" class="form-control" id="fechaExpiracion" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="codigoSeguridad" class="form-label">Código de seguridad</label>
+                                        <input type="text" class="form-control" id="codigoSeguridad" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Pagar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="carousel-container">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://lawgamers.com/wp-content/uploads/2024/04/BigBanner-Redragon-Desktop.webp"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5> Bienvenido a ChanchiTec </h5>
+                            <p>Aprovecha los Descuentos ahora por tu primera compra</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://lawgamers.com/wp-content/uploads/2024/04/BigBanner-Razer-Desktop.webp"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Si realizas tu primera compra</h5>
+                            <p>Obtienes el envío totalmente gratis</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://lawgamers.com/wp-content/uploads/2024/04/Baner-Desktop-Vertagear.webp"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Los mejores precios en productos tecnológicos</h5>
+                            <p>Audífonos, laptops, celulares, PC, y mucho más...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="texto-con-fondo">
+                <p>LOS MEJORES PERIFERICOS </p>
+            </div>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!-- Imagen al lado izquierdo -->
+                        <img src="https://lawgamers.com/wp-content/uploads/2023/11/Banner-Secundario-DesktopHYPERX.png"
+                            alt="..." class="img-fluid">
+                    </div>
+                    <div class="col-lg-8">
+                        <!-- Contenedor de las tarjetas al lado derecho -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/11/KuiperNew-300x300.jpg"
+                                                class="img-fluid rounded-start" alt="uno">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Audífono VSG Kuiper Multiplataforma</h5>
+                                                <p class="card-text">Su propio sistema de materiales y piezas armonizan
+                                                    en el interior de su construcción, que en conjunto al rango de
+                                                    frecuencia de 20 Hz – 20 KHz equilibran estructura y sonido, ofrecen
+                                                    una sensación de espacialidad definida y afinan el balance de la
+                                                    naturaleza espacial.</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/11/Audifono-Redragon-Zeus-X-Pink-1-300x300.webp"
+                                                class="img-fluid rounded-start" alt="dos">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Audífono Redragon Zeus X – Pink</h5>
+                                                <p class="card-text">Potentes, hermosos, totales. Con retroiluminación
+                                                    RGB, un micrófono excepcional, construcción cómoda y robusta, y lo
+                                                    más importante una calidad de sonido arrolladora, los aclamados Zeus
+                                                    vuelven con más:USB con controlador integrado.</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/12/Audifonos-Redragon-Lamia-Con-Stand-H320-White-366x366.webp"
+                                                class="img-fluid rounded-start" alt="tres">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Audífonos Redragon Lamia Con Stand H320-RGB White
+                                                </h5>
+                                                <p class="card-text">Los Audífonos Redragon Lamia con Stand H320 ofrecen
+                                                    una experiencia de comodidad plena con gruesas almohadillas que
+                                                    reducen el estrés sobre las orejas y una vincha articulada que se
+                                                    adapta suavemente a cualquier forma de cabeza.</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/11/Logitech-G-Audifono-G733-Lightspeed-Wireless-Negro-Color-Collection-600x600.webp"
+                                                class="img-fluid rounded-start" alt="cuatro">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Logitech G: Audífono G733 Lightspeed Wireless –
+                                                    Black (Color Collection)</h5>
+                                                <p class="card-text">Descubre la revolución en juegos con los audífonos
+                                                    G733, inalámbricos y diseñados para un rendimiento excepcional y
+                                                    comodidad total. Con tecnología LIGHTSPEED, disfruta de más de 29
+                                                    horas de batería y libertad inalámbrica de hasta 20 metros..</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="texto-con-fondo">
+                <p>CONSOLAS Y ACCESORIOS </p>
+            </div>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!-- Imagen al lado izquierdo -->
+                        <img src="https://lawgamers.com/wp-content/uploads/2023/11/PS5-Y-XBOX.png" alt="cinco"
+                            class="img-fluid">
+                    </div>
+                    <div class="col-lg-8">
+                        <!-- Contenedor de las tarjetas al lado derecho -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/12/Pathfinder-Kingmaker-ps4-300x300.webp"
+                                                class="img-fluid rounded-start" alt="seis">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">PS4: Pathfinder – Kingmaker</h5>
+                                                <p class="card-text">Descubre Pathfinder: Kingmaker – Definitive
+                                                    Edition, la experiencia RPG para un jugador definitiva basada en la
+                                                    popular saga Pathfinder. Sumérgete en las Tierras Robadas de
+                                                    Golarion, un mundo lleno de historia y misterios, , donde podrás
+                                                    explorar y conquistar con tu equipo.</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/12/TONY-HAWKS-PRO-SKATER-1-2-playstation-4-300x300.webp"
+                                                class="img-fluid rounded-start" alt="siete">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">PS4: Tony Hawks Pro Skater 1+2</h5>
+                                                <p class="card-text">Descubre la nueva colección épica de Tony Hawk’s
+                                                    Pro Skater 1 + 2, que trae de vuelta las ubicaciones y skaters
+                                                    profesionales favoritos con características y gráficos totalmente
+                                                    renovados en increíble HD. Patina como Tony Hawk y otros
+                                                    profesionales, disfrutando de la icónica banda sonora.</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2024/01/PS5-Tekken-8-300x300.webp"
+                                                class="img-fluid rounded-start" alt="ocho">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">PS5: Tekken 8</h5>
+                                                <p class="card-text">Descubre la emocionante experiencia de Tekken 8, el
+                                                    último juego de la famosa serie de lucha de Bandai Namco, diseñado
+                                                    con la avanzada tecnología Unreal Engine 5 para las consolas de
+                                                    última generación. Con gráficos impresionantes y modelos de
+                                                    personajes detallados, en un mundo visualmente impactante </p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://lawgamers.com/wp-content/uploads/2023/12/Resident-Evil-Village-Deluxe-Edition-1-300x300.webp"
+                                                class="img-fluid rounded-start" alt="nueve">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">PS5: Resident Evil – Village (Deluxe Edition)
+                                                </h5>
+                                                <p class="card-text">Descubre la intensidad del horror de supervivencia
+                                                    en Resident Evil Village, el octavo episodio principal de esta saga.
+                                                    Ambientada después de los eventos impactantes de Resident Evil 7, la
+                                                    trama sigue a Ethan Winters y su esposa Mia, se ven enfrentados a
+                                                    una nueva tragedia.</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                        mins
+                                                        ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Puedes agregar más tarjetas aquí -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="texto-con-fondo">
+            <p>ZONA STREAM </p>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Imagen al lado izquierdo -->
+                    <img src="https://lawgamers.com/wp-content/uploads/2023/11/STREAMINGS4.png" alt="once"
+                        class="img-fluid">
+                </div>
+                <div class="col-lg-8">
+                    <!-- Contenedor de las tarjetas al lado derecho -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="https://lawgamers.com/wp-content/uploads/2023/11/cRUXnEW-300x300.jpg"
+                                            class="img-fluid rounded-start" alt="diez">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Combo VSG Crux 4 En 1 –
+                                                Mouse/Teclado/Headset/Mousepad</h5>
+                                            <p class="card-text">Construido en ABS, con sistema de doble banda para
+                                                mayor resistencia y micrófono flexible con calidad preponderante. Como
+                                                complemento, cuenta con conexión TRS de 3.5 mm y cable de 2.1 m
+                                                enmallado y conector USB tipo-A.
+                                            </p>
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="https://lawgamers.com/wp-content/uploads/2023/11/Soporte-VSG-Para-Cable-Hyperion-Black-300x300.jpg"
+                                            class="img-fluid rounded-start" alt="trece">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Soporte VSG Para Cable Hyperion Black</h5>
+                                            <p class="card-text">Múltiples puntos de fijación en su brazo de resorte
+                                                retráctil eliminan el arrastre del cable, ya sea de paracord, trenzado o
+                                                de goma, quedando suspendido en el punto y ángulo ideal, dejando fluir
+                                                los movimientos de tu mouse como si de un asteroide flotando en el
+                                                espacio se tratara.</p>
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="https://lawgamers.com/wp-content/uploads/2023/12/Camara-Redragon-Hitman-GW800-300x300.webp"
+                                            class="img-fluid rounded-start" alt="catorce">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                Camara Redragon Hitman GW800</h5>
+                                            <p class="card-text">Transmite, enseña, entretiene; muéstrate haciendo lo
+                                                que mejor haces. La Hitman es la herramienta perfecta para ello: una
+                                                webcam diseñada específicamente para streaming, que se adapta a las
+                                                necesidades precisas
+                                            </p>
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="https://lawgamers.com/wp-content/uploads/2023/11/Mouse-Logitech-G-Pro-X-Superlight-Wireless-Lightspeed-Hero-25K-Magenta-300x300.webp"
+                                            class="img-fluid rounded-start" alt="quince">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Logitech G: Mouse Pro X – Lightspeed Hero 25K –
+                                                Magenta</h5>
+                                            <p class="card-text">El mouse Logitech G Pro X Superlight Wireless es el
+                                                compañero perfecto para los jugadores profesionales de esports. Con
+                                                menos de 63 gramos, es el mouse inalámbrico más ligero y rápido de
+                                                Logitech G.</p>
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-5">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top footer-links">
+                <div class="col mb-3">
+                    <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                    </a>
+                    <p class="text-body-secondary">© 2024</p>
+                </div>
+
+                <div class="col mb-3">
+
+                </div>
+
+                <div class="col mb-3">
+                    <h5>COMUNICATE CON NOSOTROS</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Central
+                                telefonica:</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">902149574</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Correo
+                                electronico</a></li>
+                        <li class="nav-item mb-2"><a href="#"
+                                class="nav-link p-0 text-body-secondary">canchitecshop@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col mb-3">
+                    <h5>NOSOTROS</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="./tiendas.html"
+                                class="nav-link p-0 text-body-secondary">Nuestras
+                                Tiendas</a></li>
+                    </ul>
+                </div>
+
+                <div class="col mb-3">
+                    <h5>Servicio al Cliente</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="./garantia.html"
+                                class="nav-link p-0 text-body-secondary">Garantia</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="./terminos.html"
+                                class="nav-link p-0 text-body-secondary">Terminos y
+                                Condiciones</a></li>
+                        <li class="nav-item mb-2"><a href="./privacidad.html"
+                                class="nav-link p-0 text-body-secondary">Privacidad</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Politica de
+                                cambio y Devolución</a></li>
+                        <li class="nav-item mb-2"><a href="./general.html"
+                                class="nav-link p-0 text-body-secondary">General
+                            </a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
